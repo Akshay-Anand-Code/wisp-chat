@@ -1,0 +1,44 @@
+.App {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+  }
+  
+  .background-container {
+    position: fixed;
+    top: 0;                    /* Changed from 15vh to align with top line */
+    left: 0;
+    width: 100vw;
+    height: 100vh;            /* Changed from 60vh to full height */
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .background-gif {
+    width: 100%;              /* Changed from 80% to fill width */
+    height: 100%;             /* Changed from 80% to fill height */
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);  /* Removed scale(0.8) to fill space */
+  }
+  
+  @keyframes levitate {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .levitate {
+    animation: levitate 4s ease-in-out infinite;
+  }
